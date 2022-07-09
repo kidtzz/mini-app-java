@@ -53,7 +53,7 @@ public class Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Nama");
+        jLabel1.setText("Name");
 
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,13 +206,13 @@ public class Register extends javax.swing.JFrame {
                 lg.setLocationRelativeTo(null);
                 lg.setDefaultCloseOperation(Register.EXIT_ON_CLOSE);
                 this.setVisible(false);
-                JOptionPane.showMessageDialog(null,"Register Succes, Silahkan Login");
+                JOptionPane.showMessageDialog(null,"Registration Successful, Please Login");
             }
              
             
         }
         else{
-            jLabel6.setText("The Password doesn't macth");
+            jLabel6.setText("The Password doesn't match");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

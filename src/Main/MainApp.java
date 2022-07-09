@@ -12,13 +12,11 @@ import javax.swing.table.DefaultTableModel;
  * @author Kidtz
  */
 public class MainApp extends javax.swing.JFrame {
-
     /**
      * Creates new form MainApp
      */
     private DefaultTableModel modelTable = new DefaultTableModel(); 
     int _posisi = 0;
-   
     String namabarang;
     int hargabarang;
     int qty;
@@ -33,8 +31,7 @@ public class MainApp extends javax.swing.JFrame {
             jLabel5.setText("Admin");
         }else{
             jLabel5.setText(Register.Name + "!");
-        }
-        
+        } 
     }
     
     public void isKosong(){
@@ -53,6 +50,7 @@ public class MainApp extends javax.swing.JFrame {
         }
         jTextField7.setText(Integer.toString(sum));
        
+//        jTextField7.setText(String.format("%,d", sum));
     }
 
     /**
@@ -152,7 +150,7 @@ public class MainApp extends javax.swing.JFrame {
 
         jLabel7.setText("Kode Barang");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "00A2", "00A3", "00A4", "00A5", "00A6" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "00A1", "00A2", "00A3", "00A4", "00A5", "00A6", "00A7" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -205,10 +203,22 @@ public class MainApp extends javax.swing.JFrame {
 
         jLabel9.setText("Sub Total Harga");
 
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+
         jButton4.setText("Log Out");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
+            }
+        });
+
+        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField7ActionPerformed(evt);
             }
         });
 
@@ -229,7 +239,7 @@ public class MainApp extends javax.swing.JFrame {
         });
 
         jLabel12.setFont(new java.awt.Font("Lucida Sans Unicode", 0, 18)); // NOI18N
-        jLabel12.setText("Welcome to dahsboard mini-app");
+        jLabel12.setText("Dahsboard Mini-App");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -240,15 +250,17 @@ public class MainApp extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel6))
+                                .addGap(15, 15, 15))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel9)
-                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -299,10 +311,10 @@ public class MainApp extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton4)))
                 .addGap(14, 14, 14))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(366, 366, 366)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(364, 364, 364))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -318,20 +330,17 @@ public class MainApp extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -375,16 +384,9 @@ public class MainApp extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-//        
-//        int row = jTable2.getSelectedRow();
-//        row = 0;
-//        modelTable.removeRow(row);
-//        getSum();
-//        isKosong();
-//        
         
         int response = JOptionPane.showConfirmDialog(this, 
-                "Hapus "+ jTextField1.getText().toString(), 
+                "Hapus Barang "+ jTextField2.getText().toString(), 
                 "Konfirmasi", 
                 JOptionPane.YES_NO_OPTION);
         
@@ -405,23 +407,30 @@ public class MainApp extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:     
         if(jComboBox2.getSelectedIndex()== 1){
-            namabarang = "Al-Mariyuq";
-            hargabarang = 110000;
+            namabarang = "Capucino Ice";
+            hargabarang = 20000;
         }else if(jComboBox2.getSelectedIndex()== 2){
-            namabarang = "Al-Galonun";
-            hargabarang = 650000;
+            namabarang = "Kopi Susu";
+            hargabarang = 13000;
         }else if(jComboBox2.getSelectedIndex()== 3){
-            namabarang = "Al-Kurisun";
-            hargabarang = 710000;
+            namabarang = "Susu Teh";
+            hargabarang = 16000;
         }else if(jComboBox2.getSelectedIndex()== 4){
-            namabarang = "Al-Slimutun";
-            hargabarang = 510000;
+            namabarang = "Wedang Jahe";
+            hargabarang = 25000;
         }else if(jComboBox2.getSelectedIndex()== 5){
-            namabarang = "Al-Kardusun";
-            hargabarang = 210000;
+            namabarang = "Pop Ice Madu";
+            hargabarang = 15000;
+        }else if(jComboBox2.getSelectedIndex()== 6){
+            namabarang = "Teh Panas";
+            hargabarang = 12000;
+        }else if(jComboBox2.getSelectedIndex()== 7){
+            namabarang = "Es Teh";
+            hargabarang = 10000;
         }
+
         jTextField2.setText(String.valueOf(namabarang));
-        jTextField3.setText(String.valueOf(hargabarang));
+        jTextField3.setText(String.valueOf( hargabarang));
         
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
@@ -452,16 +461,16 @@ public class MainApp extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         
-        String kodebarang = jComboBox2.getSelectedItem().toString();
+        String kodebarang = (String) jComboBox2.getSelectedItem();
         String namakonsumen = jTextField1.getText();
-        
-        
-//        if ( namakonsumen.equals("")){
-//            JOptionPane.showMessageDialog(null,"Please Enter Nama Pelanggan");
-//        } 
-        if ( kodebarang.equals("")){
-            JOptionPane.showMessageDialog(null,"Please Enter Kode Barang");  
-        }else if (( namakonsumen != null) || (kodebarang != null)){
+       
+        if ( jComboBox2.getSelectedItem() == "Select"){
+            JOptionPane.showMessageDialog(null,"Please Enter Kode Barang");
+        } 
+        else if ( jComboBox3.getSelectedItem() == "Select"){
+            JOptionPane.showMessageDialog(null,"Please Enter Qty");
+        }  
+        else{
             modelTable = (DefaultTableModel) jTable2.getModel();
             Object[] data = new Object[6];
             data[0] = namakonsumen;
@@ -473,28 +482,21 @@ public class MainApp extends javax.swing.JFrame {
             modelTable.addRow(data);
             getSum(); 
             isKosong();
-        }else{
-            
-        }
-     
-       
-        
-      
-        
+        }    
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
          try {
            
-            modelTable.setValueAt(jTextField1.getText(), _posisi, 0);
-//            modelTable.setValueAt(jTextField2.getText(), _posisi, 1);
-            modelTable.setValueAt(jTextField2.getText(), _posisi, 2);
-            modelTable.setValueAt(jTextField3.getText(), _posisi, 3);
-//            modelTable.setValueAt(jTextField1.getText(), _posisi, 4);
-            modelTable.setValueAt(jTextField6.getText(), _posisi, 5);
-            getSum();
-            isKosong();
+        modelTable.setValueAt(jTextField1.getText(), _posisi, 0);
+        modelTable.setValueAt(jComboBox2.getSelectedItem(), _posisi, 1);
+        modelTable.setValueAt(jTextField2.getText(), _posisi, 2);
+        modelTable.setValueAt(jTextField3.getText(), _posisi, 3);
+        modelTable.setValueAt(jComboBox3.getSelectedIndex(), _posisi, 4);
+        modelTable.setValueAt(jTextField6.getText(), _posisi, 5);
+        getSum();
+        isKosong();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e, "Ups, terjadi kesalahan", WIDTH);
         }
@@ -533,17 +535,24 @@ public class MainApp extends javax.swing.JFrame {
         // TODO add your handling code here:
     _posisi = jTable2.getSelectedRow();
     jTextField1.setText(modelTable.getValueAt(_posisi, 0).toString());
-//        jComboBox2.getSelectedItem(modelTable.getValueAt(_posisi, 1).toString());
-
+    jComboBox2.setSelectedItem(modelTable.getValueAt(_posisi, 1));
     jTextField2.setText(modelTable.getValueAt(_posisi, 2).toString());
     jTextField3.setText(modelTable.getValueAt(_posisi, 3).toString());
-//        jComboBox3.setSelectedIndex(model.getValueAt(_posisi, 4).toString());
+    jComboBox3.setSelectedIndex((int) modelTable.getValueAt(_posisi, 4));
     jTextField6.setText(modelTable.getValueAt(_posisi, 5).toString());
         
         
         
         
     }//GEN-LAST:event_jTable2MouseClicked
+
+    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField7ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -169,7 +169,7 @@ public class Login extends javax.swing.JFrame {
         }
         else{
 //            jLabel4.setText("Your password or username invalid");
-            JOptionPane.showMessageDialog(null,"Password or Username Invalid!!!");
+            JOptionPane.showMessageDialog(null,"Invalid password or username");
             
         }
             
